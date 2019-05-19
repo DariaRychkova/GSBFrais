@@ -1,0 +1,29 @@
+{% extends "::base.html.twig" %} 
+        {% block head %}
+	<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+	{% endblock %}
+        {% block body %}
+	<body>
+             <table class="table-bordered table text-center table-primary">
+                    <thead class="thead-light">
+                            <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Montant</th>
+                                    <th scope="col">Libelle</th>
+                            </tr>
+                    </thead>
+                {% for value in result %}
+            <tbody>
+                <tr>
+                 <td> {{ value.id }} </td>
+                <td>  {{ value.montant }} </td>
+                <td>  {{ value.libelle }} </td>
+                </tr>
+            </tbody>
+                {% endfor %}
+            </table>
+           
+     </body>
+</html>
+{% endblock %}

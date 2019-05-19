@@ -1,0 +1,31 @@
+{% extends "::base.html.twig" %} 
+        {% block head %}
+	<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+	{% endblock %}
+        {% block body %}
+	<body>
+                
+                <table class="table-bordered table text-center table-primary">
+                    <thead class="thead-light">
+                            <tr>
+                                    <th scope="col">Mois</th>
+                                    <th scope="col">Quantite</th> 
+                                    <th scope="col">Fiche Forfait</th>
+                            </tr>
+                    </thead>
+                {% for value in result %}
+            <tbody>
+                <tr>
+                 <td> {{ value.mois }} </td>
+                <td> {{ value.quantite }} </td>
+                <td> {{ value.fraisforfait.libelle }} </td>
+                </tr>
+            </tbody>
+                {% endfor %}
+                </table>
+               
+        </body>
+</html>
+{# empty Twig template #}
+{% endblock %}

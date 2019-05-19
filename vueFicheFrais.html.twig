@@ -1,0 +1,58 @@
+{% extends "::base.html.twig" %} 
+	{% block head %}
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+	{% endblock %} 
+	{% block body %}
+		<div class="text-center">
+			<img src="../img/logo_big.png">
+		</div>
+<div class="offset-2 col-8">
+<h3>Ajouter fiche frais</h3>
+<div class ="form-control">
+		{{ form_start(form) }}
+					{{ form_errors(form) }}
+
+
+					<div>
+					
+					{{ form_label(form.id) }}
+					{{ form_widget(form.id,{ 'attr': {'placeholder': 'Login-mmyyyy'} }) }}
+<br>
+					{{ form_label(form.mois) }}
+					{{ form_widget(form.mois,{ 'attr': {'placeholder': 'mmyyyy'} }) }}
+	<br>				
+					{{ form_label(form.nbJustificatifs) }}
+					{{ form_widget(form.nbJustificatifs) }}
+<br>
+					{{ form_label(form.montantValide) }}
+					{{ form_widget(form.montantValide) }}
+					
+<br>
+                                        {{ form_label(form.dateModif) }}
+					{{ form_widget(form.dateModif) }}
+					
+<br>
+                                        {{ form_label(form.visiteur) }}
+                                        {{ form_widget(form.visiteur) }}
+                                        
+				
+					
+<br>
+                                        {{ form_label(form.etat) }}
+					{{ form_widget(form.etat) }}
+					
+<br>
+
+					</div>
+
+
+					<div class='btn'>
+					{{ form_label(form.Enregistrer) }}
+					{{ form_widget(form.Enregistrer) }}
+					</div>
+
+				{{ form_end(form) }}
+</div>
+</div>
+	{% endblock %}

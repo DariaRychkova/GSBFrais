@@ -1,0 +1,18 @@
+{# empty Twig template #}
+<html lang="fr">
+	<head>
+	<!DOCTYPE html>
+	<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+	</head>
+	<body>
+                <table>
+                {% for value in result %}
+                <tr>
+                <td> {{ value.mois }} </td>
+                <td> {{ value.quantite }} </td>
+                </tr>
+                {% endfor %}
+                </table>
+        </body>
+</html>

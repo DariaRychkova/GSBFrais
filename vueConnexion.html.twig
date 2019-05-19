@@ -1,0 +1,45 @@
+{% extends "::base.html.twig" %}
+
+	{% block head %}
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	{% endblock %}
+	{% block body %}
+		<div>
+			<div class="text-center">
+				<img src="img/logo_big.png">
+			</div>
+			<div class="offset-2 col-8">
+				{{ form_start(form) }}
+					<h4>Connexion du visiteur</h4>
+					<div class="form-control">
+					{{ form_errors(form) }}
+
+					{% if test is defined%}
+						<center>
+						{{ test }}
+						</center>
+					{% endif %}
+
+					<div>
+					{{ form_label(form.login) }}
+					{{ form_widget(form.login) }}
+
+					{{ form_label(form.mdp) }}
+					{{ form_widget(form.mdp) }}
+					</div>
+
+					<div class='btn'>
+					{{ form_label(form.annuler) }}
+					{{ form_widget(form.annuler) }}
+					</div>
+
+					<div class='btn'>
+					{{ form_label(form.valider) }}
+					{{ form_widget(form.valider) }}
+					</div>
+
+				{{ form_end(form) }}
+			</div>
+		</div>
+	{% endblock %}

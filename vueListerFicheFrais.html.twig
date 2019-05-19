@@ -1,0 +1,83 @@
+{% extends "::base.html.twig" %} 
+
+
+
+{# empty Twig template #}
+
+        {% block head %}
+            
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../css/style.css">       
+	{% endblock %} 
+ 
+	{% block body %}
+            <body>
+		<div class="container">
+		
+
+  
+    <h4 class="alert alert-primary" role="alert"> Fiche frais de {{app.session.get('levisi').Nom}} {{app.session.get('levisi').Prenom}}</h4>
+    
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+    Menu
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="/">Accueil</a>
+    <a class="dropdown-item" href="/fraisforfait/consulter">Consulter les frais forfait</a>
+    <a class="dropdown-item" href="/logout">Quitter</a>
+  </div>
+</div>
+    
+    <br>
+<br>
+		<center>
+		{{ form_start(form)}}
+		{{ form_label(form.date) }}
+		{{ form_widget(form.date, { 'attr': {'maxlength': '6','minlength':'6'} }) }}
+		<br>
+		{{form_end(form)}}
+		</center>  
+    
+    <br>
+    <br>                            
+            <div class="row">
+		<div class="col-md-1"></div>
+                
+                <table class="table-bordered table text-center">
+                    <thead class="thead-light">
+                            <tr>
+                                    <th scope="col">Date (mois/année)</th>
+                                    <th scope="col">Nombre de justificatifs</th> 
+                                    <th scope="col">Montant valide</th>
+                                    <th scope="col">Date de modification</th>
+                                    <th scope="col">Etat</th>
+                                    <th scope="col">Modification</th>
+                            </tr>
+                    </thead>
+            {% if result is defined %}
+                {% for value in result %}
+            <tbody>
+                <tr>
+                <td> {{ value.mois }} </td>
+                <td> {{ value.nbJustificatifs }} </td>
+                <td> {{ value.montantValide }} </td>
+                <td> {{ value.dateModif|date("d/m/Y") }} </td>
+                <td> {{ value.etat.libelle }} </td>
+                <td><a href="/lignefraisforfaitlister/consulter/{{value.id}}" class="btn btn-info"> Ligne frais forfait</a> </td>
+                <td><a href="/lignefraishorsforfaitlister/consulter/{{value.id}}" class="btn btn-success"> Ligne frais hors forfait</a> </td>
+                <td>  <a href="/fichefrais/modifier/{{value.id}}" class="btn btn-primary"> Modifier</a> </td>
+                </tr>
+            </tbody>
+                {% endfor %}
+            {% endif %}
+                </table>
+                </div>
+                
+                 </div>
+	</body>
+</html>
+        
+        {% endblock %}
+        
+    

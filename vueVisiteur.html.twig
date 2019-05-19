@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+            <meta charset="utf-8"/>
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	</head>
+	<body>
+
+<h3 class="titre" >Ajouter un visiteur</h3>
+
+                
+{{ form_start(form) }}
+{# Les erreurs générales du formulaire. #}
+{{ form_errors(form) }}
+
+<div class="form-row">
+    <div class="form-group col-md-4">
+{# Génération du label. #}
+{{ form_label(form.id, "Id", {'label_attr': {'class': 'col-sm-3
+
+control-label'}}) }}
+
+{# Affichage des erreurs pour ce champ précis. #}
+{{ form_errors(form.id) }}
+{# Génération de l'input. #}
+
+{{ form_widget(form.id, {'attr': {'class': 'form-control'}}) }}
+</div>
+
+<div class="form-group col-md-4">
+{# Génération du label. #}
+{{ form_label(form.nom, "Nom", {'label_attr': {'class': 'col-sm-3
+
+control-label'}}) }}
+
+{# Affichage des erreurs pour ce champ précis. #}
+{{ form_errors(form.nom) }}
+{# Génération de l'input. #}
+{{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
+</div>
+
+{# Idem pour un autre champ. #}
+
+<div class="form-group col-md-4">
+
+{{ form_label(form.prenom, "Prénom", {'label_attr': {'class': 'col-
+sm-3 control-label'}}) }}
+
+{{ form_errors(form.prenom) }}
+
+{{ form_widget(form.prenom, {'attr': {'class': 'form-control'}}) }}
+</div>
+
+</div>
+
+<div class="form-row">
+    
+    <div class="form-group col-md-6">
+
+{{ form_label(form.login, "Login", {'label_attr': {'class': 'col-
+sm-3 control-label'}}) }}
+
+{{ form_errors(form.login) }}
+
+{{ form_widget(form.login, {'attr': {'class': 'form-control'}}) }}
+
+</div>
+
+<div class="form-group col-md-4">
+
+{{ form_label(form.mdp, "Mot de passe", {'label_attr': {'class': 'col-
+sm-3 control-label'}}) }}
+
+{{ form_errors(form.mdp) }}
+
+{{ form_widget(form.mdp, {'attr': {'class': 'form-control'}}) }}
+</div>
+</div>
+
+
+<div class="form-row">
+    <div class="form-group col-md-4">
+
+{{ form_label(form.adresse, "Adresse", {'label_attr': {'class': 'col-
+sm-3 control-label'}}) }}
+
+{{ form_errors(form.adresse) }}
+
+{{ form_widget(form.adresse, {'attr': {'class': 'form-control'}}) }}
+</div>
+
+<div class="form-group col-md-4">
+
+{{ form_label(form.cp, "Code postal", {'label_attr': {'class': 'col-
+sm-3 control-label'}}) }}
+
+{{ form_errors(form.cp) }}
+
+{{ form_widget(form.cp, {'attr': {'class': 'form-control'}}) }}
+</div>
+
+<div class="form-group col-md-4">
+
+{{ form_label(form.ville, "Ville", {'label_attr': {'class': 'col-
+sm-3 control-label'}}) }}
+
+{{ form_errors(form.ville) }}
+
+{{ form_widget(form.ville, {'attr': {'class': 'form-control'}}) }}
+</div>
+</div>
+
+{{ form_label(form.dateEmbauche, "Date d'embauche", {'label_attr': {'class': 'col-
+sm-3 control-label'}}) }}
+
+{{ form_errors(form.dateEmbauche) }}
+
+{{ form_widget(form.dateEmbauche, {'attr': {'class': 'form-control'}}) }}
+
+
+<div class="form-group"> 
+    <label class="col-md-4 control-label"></label>
+    <div class="col-md-4">
+        {{ form_widget(form.Annuler, {'attr': {'class': 'btn btn-primary'}}) }}
+        {{ form_widget(form.Enregistrer, {'attr': {'class': 'btn btn-primary'}}) }}
+        
+    </div>
+</div>
+	</body>
+</html>
+
+
+

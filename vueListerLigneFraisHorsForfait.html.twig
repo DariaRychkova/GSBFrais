@@ -1,0 +1,39 @@
+{% extends "::base.html.twig" %} 
+        {% block head %}
+	<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+	{% endblock %}
+        {% block body %}
+	<body>
+            <table class="table-bordered table text-center table-primary">
+                    <thead class="thead-light">
+                            <tr>
+                                    <th scope="col">Libelle</th>
+                                    <th scope="col">Date</th> 
+                                    <th scope="col">Montant</th>
+                                    <th scope="col">Modifier</th>
+                                    <th scope="col">Supprimer</th>
+                            </tr>
+                    </thead>
+                {% if result is defined %}
+                {% for value in result %}
+            <tbody>
+                <tr>
+                 <td> {{ value.libelle }} </td>
+                <td> {{ value.date|date("d/m/Y") }} </td>
+                <td> {{ value.montant }} </td>
+                <td> {{ value.montant }} </td>
+		<td>  <a href="/fichefrais/LigneFHF/modifier/{{value.id}}" class="btn btn-primary"> Modifier</a> </td>
+		<td>  <a href="/fichefrais/LigneFHF/supprimer/{{value.id}}" class="btn btn-primary" OnClick="return confirm('Voulez-vous supprimer ce hors forfait ?')"> Supprimer</a> </td>
+                </tr>
+            </tbody>
+                {% endfor %}
+        {% endif %}
+            </table>
+                
+        </body>
+</html>
+{# empty Twig template #}
+{% endblock %}
+
+

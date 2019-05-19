@@ -1,0 +1,50 @@
+{% extends "::base.html.twig" %} 
+	{% block head %}
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+{% endblock %} 
+	{% block body %}
+			<div class="text-center">
+				<img src="../img/logo_big.png">
+			</div>
+<div class="offset-2 col-8">
+<h3>Ajouter ligne frais hors forfait</h3>
+<div class = "form-control">
+		{{ form_start(form) }}
+					{{ form_errors(form) }}
+
+
+					<div>
+					
+<br>
+					{{ form_label(form.libelle) }}
+					{{ form_widget(form.libelle) }}
+<br>
+					{{ form_label(form.date) }}
+					{{ form_widget(form.date) }}
+<br>					
+					{{ form_label(form.montant) }}
+					{{ form_widget(form.montant) }}
+<br>
+					{{ form_label(form.fichefrais) }}
+					{{ form_widget(form.fichefrais) }}
+
+					</div>
+
+
+					<div class='btn'>
+					{{ form_label(form.Enregistrer) }}
+					{{ form_widget(form.Enregistrer) }}
+					</div>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+
+<a href="/accueil"><input  class="btn-secondary btn" type="button" name="Saisir "value="Terminer"/></a>
+
+				{{ form_end(form) }}
+
+</div>
+
+</div>
+{% endblock %}

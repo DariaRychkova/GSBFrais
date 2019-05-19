@@ -1,0 +1,79 @@
+<?php
+
+namespace GSB\VisiteurBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Visiteur
+ *
+ * @ORM\Table(name="visiteur")
+ * @ORM\Entity(repositoryClass="GSB\VisiteurBundle\Repository\VisiteurRepository")
+ */
+class Visiteur
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="string")
+     * @ORM\Id
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=30)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom", type="string", length=30)
+     */
+    private $prenom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="login", type="string", length=20, unique=true)
+     */
+    private $login;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mdp", type="string", length=20)
+     */
+    private $mdp;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adresse", type="string", length=50)
+     */
+    private $adresse;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cp", type="string", length=5)
+     */
+    private $cp;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ville", type="string", length=30)
+     */
+    private $ville;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateEmbauche", type="date")
+     */
+    private $dateEmbauche;
+
+}
